@@ -1,4 +1,22 @@
 ﻿.menu {
     display: flex;
     justify-content: space-around;
+    height: 50px;
+    background-color: #a22;
+}
+
+.title-white {
+    color: #fff;
+}
+
+.menu__items{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+    color: white;
+}
+
+.menu__items p {
+    margin: 0 10px;
 }
