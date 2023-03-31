@@ -20,3 +20,14 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+const Usuario = () => {
+    return (
+            <div>
+                <h1>Usuario 1</h1>
+                <p>Gaston Brandt</p>
+                <p>28 años</p>
+                <p>Nacionalidad: Argentina</p>
+            </div>
+    );
+}
