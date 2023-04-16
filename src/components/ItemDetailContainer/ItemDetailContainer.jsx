@@ -1,5 +1,5 @@
 ﻿import React, { useState, useEffect } from 'react'
-import {pedirProductos} from '../../helpers/pedirProductos'
+import { pedirProductos } from "../../helpers/pedirProducto";
 import {ImSpinner3} from 'react-icons/im'
 import {ItemDetail} from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
