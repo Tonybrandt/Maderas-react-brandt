@@ -3,7 +3,7 @@ import { pedirProductos } from "../../helpers/pedirProducto";
 import { ItemList } from "../ItemList/ItemList";
 import { Spinner } from "react-bootstrap";
 
-export const ItemListContainer = (props) => {
+const ItemListContainer = () => {
   
   const [items, setItems] = useState([])
   
