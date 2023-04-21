@@ -2,9 +2,9 @@
 import './spinner.css'
 function VariantsExample() {
   return (
-    <>
+    <div className='loader-background'>
       <Spinner animation="grow" variant="danger" />
-    </>
+    </div>
   );
 }
 

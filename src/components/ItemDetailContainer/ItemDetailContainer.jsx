@@ -1,6 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react'
 import { pedirProductos } from "../../helpers/pedirProducto";
-import {ImSpinner3} from 'react-icons/im'
+import Spinner from 'react-bootstrap/Spinner';
 import {ItemDetail} from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 
@@ -30,7 +30,7 @@ export const ItemDetailContainer = () => {
     <section>
         {
             loading
-            ?<ImSpinner3/>
+            ?<Spinner />
             :<ItemDetail {...item}/>
         }
     </section>
