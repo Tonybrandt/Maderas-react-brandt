@@ -1,6 +1,7 @@
 ﻿// import React from 'react'
 import "./navbar.css";
 import CartWidget from "../CartWidget/CartWidget";
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
@@ -9,11 +10,13 @@ const NavBar = () => {
         JB <span className="title-white">Maderas</span>
       </h1>
       <div className="menu__items">
-        <p>Inicio</p>
-        <p>Nosotros</p>
-        <p>Tienda</p>
-        <p>Contacto</p>
-        <CartWidget />
+        <Link className='link' to="/">Inicio</Link>
+        {/* <p>Nosotros</p> */}
+        {/* <p>Tienda</p> */}
+        <Link className='link' to='/productos/'>Tienda</Link>
+        <p className='link'>Contacto</p>
+        {/* <CartWidget /> */}
+        <Link className='link' to='/cart'><CartWidget/></Link>
       </div>
     </nav>
   );

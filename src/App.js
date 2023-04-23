@@ -11,6 +11,8 @@ import {
   Navigate,
   Route,
 } from 'react-router-dom'
+import { HeaderContainer } from './components/HeaderContainer/HeaderContainer';
+
 
 function App() {
 
@@ -22,6 +24,7 @@ function App() {
       <ItemCount /> */}
        <Router>
           <NavBar />
+          <HeaderContainer />
           <Routes>
             <Route path='/' element={<ItemListContainer/>}/>
             <Route path='/productos/:categoryId' element={<ItemListContainer/>}/>

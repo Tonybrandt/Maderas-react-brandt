@@ -1,0 +1,21 @@
+﻿.title {
+    font-size: 70px;
+}
+
+.title__red {
+    color: #a22;
+}
+
+.title__copy {
+    background-color: antiquewhite;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.header--button {
+    padding: 10px 30px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: #a22;
+    color: white;
+}

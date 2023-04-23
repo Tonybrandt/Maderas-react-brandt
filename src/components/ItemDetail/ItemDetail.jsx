@@ -2,7 +2,7 @@
 import { Card, Button } from 'react-bootstrap'
 import { ItemCount } from '../ItemCount/ItemCount'
 
-export const ItemDetail = ({ id, description, price, image, category }) => {
+export const ItemDetail = ({ /*id,*/ description, price, image, category }) => {
   // Pasamos mediante props, cada propiedad de nuestro productos(objetos) y lo colocamos por props en nuestro return
   return (
     <div className='item'>
