@@ -12,6 +12,7 @@ import {
   Route,
 } from 'react-router-dom'
 import { HeaderContainer } from './components/HeaderContainer/HeaderContainer';
+import { SectionIntro } from './components/SectionIntro/SectionIntro';
 
 
 function App() {
@@ -25,8 +26,9 @@ function App() {
        <Router>
           <NavBar />
           <HeaderContainer />
+          <SectionIntro />
           <Routes>
-            <Route path='/' element={<ItemListContainer/>}/>
+            <Route path='/' element= {<ItemListContainer/>}/>
             <Route path='/productos/:categoryId' element={<ItemListContainer/>}/>
             <Route path='/detail/:itemId' element={<ItemDetailContainer/>}/>
             <Route path='/counter' element={<ItemCount/>}/>

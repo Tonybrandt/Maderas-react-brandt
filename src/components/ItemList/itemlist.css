@@ -1,4 +1,16 @@
-﻿img {
+﻿.item-list {
+    background-color: #ededed;
+    padding: 30px 0;
+}
+
+.itemlist__title {
+    font-size: 35px;
+    text-decoration: underline;
+    margin: 20px auto;
+    margin-bottom: 40px;
+}
+
+img {
     width: 200px;
     height: 250px;
 }

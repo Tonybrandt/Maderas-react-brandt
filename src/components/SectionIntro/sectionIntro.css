@@ -1,0 +1,14 @@
+﻿.section__title {
+    font-size: 40px;
+    text-decoration: underline;
+    font-weight: bold;
+    max-width: 90%;
+    margin: 40px auto;
+}
+
+.section__copy {
+    max-width: 90%;
+    margin: 20px auto;
+    margin-bottom: 40px;
+    padding: 0.1px;
+}
