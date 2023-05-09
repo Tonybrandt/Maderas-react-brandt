@@ -2,6 +2,9 @@
 import { pedirProductos } from "../../helpers/pedirProducto";
 import { ItemList } from "../ItemList/ItemList";
 import { Spinner } from "react-bootstrap";
+import { HeaderContainer } from "../HeaderContainer/HeaderContainer";
+import { SectionIntro } from "../SectionIntro/SectionIntro";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
   
@@ -9,6 +12,9 @@ const ItemListContainer = () => {
   
   const [loading, setLoading] = useState(false)
 
+  const {categoryId} = useParams()
+
+  
  
 
   useEffect(() =>{
@@ -16,13 +22,17 @@ const ItemListContainer = () => {
     setLoading(true)
     pedirProductos()
       .then((res) =>{
-        //Imprimimos la respuesta y la guardamos en el hook
-        setItems(res)
-        console.log(res)
+        if(categoryId){
+          setItems(res.filter(prod => prod.category === categoryId))
+        }else {
+          setItems(res)
+        }
+        
+        
       })
       .catch((error) => console.log(error))
       .finally(() =>{setLoading(false)})
-  }, [])
+  }, [categoryId])
   
   
   return (
@@ -30,7 +40,11 @@ const ItemListContainer = () => {
       {
         loading ?
           <Spinner /> :
+          <>
+          <HeaderContainer />
+          <SectionIntro />
           <ItemList productos={items}/>
+          </>
         }
     </div>
   );

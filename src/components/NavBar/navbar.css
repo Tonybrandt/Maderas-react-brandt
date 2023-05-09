@@ -6,6 +6,16 @@
     background-color: #a22;
 }
 
+.title-nav {
+    color: #000;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.title-nav:hover {
+    color: #000;
+}
+
 .title-white {
     color: #fff;
 }
@@ -37,4 +47,15 @@
 .link:hover {
     color: white;
     text-decoration: none;
+}
+
+.link-deplegable {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.link-deplegable:hover {
+    color: #000;
 }

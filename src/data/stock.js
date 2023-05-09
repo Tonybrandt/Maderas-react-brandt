@@ -4,7 +4,7 @@
     description: "Aislantes",
     price: 35,
     image: "https://images.unsplash.com/photo-1617565084935-4e63d2a1b241?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YWx1bWluaW98ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-    category: 'Aislantes'
+    category: 'aislantes'
 },
 {
     id: 2,
