@@ -1,6 +1,7 @@
 ﻿import React from 'react';
 import { Card, Button } from 'react-bootstrap'
 import { ItemCount } from '../ItemCount/ItemCount'
+import './itemdetail.css'
 
 export const ItemDetail = ({ /*id,*/ description, price, image, category }) => {
   // Pasamos mediante props, cada propiedad de nuestro productos(objetos) y lo colocamos por props en nuestro return
@@ -15,7 +16,7 @@ export const ItemDetail = ({ /*id,*/ description, price, image, category }) => {
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea error totam quibusdam doloribus, alias aperiam exercitationem laboriosam illum similique eos, delectus vitae odit maxime, repellendus iusto quisquam placeat blanditiis. Cupiditate! </p>
           <Card.Title>Categoria: {category}</Card.Title>
           <ItemCount />
-          <Button variant="primary">Agregar al carrito</Button>
+          <Button className='btn__itemdetail' variant="primary">Agregar al carrito</Button>
         </Card.Body>
       </Card>
     </div>

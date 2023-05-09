@@ -17,6 +17,9 @@ import { SectionIntro } from './components/SectionIntro/SectionIntro';
 
 function App() {
 
+  // const [carrito, setCarrito] = useState([])
+
+  // console.log(carrito)
 
   return (
     <div className="App">
