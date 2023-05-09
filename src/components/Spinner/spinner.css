@@ -1,10 +1,10 @@
 ﻿.spinner {
     color: #a22;
     position: fixed;
-    left : 50%;
-    bottom : 0;
-    right : 0;
-    top : 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 80px auto;
 }
 
 .loader-background {
@@ -14,7 +14,5 @@
     max-height: 100vh;
     width: 100vw;
     height: 100vh;
-    position: absolute;
-    background-color: #eaeaea4a;
-    z-index: 9;
+    margin: 150px auto;
 }
