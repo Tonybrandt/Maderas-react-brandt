@@ -5,7 +5,7 @@ export const CartContext = createContext()
 
 const init = JSON.parse(localStorage.getItem('carrito')) || []
 
-export const CartProvider = ({Children}) =>{
+export const CartProvider = ({children}) =>{
 
   const [carrito, setCarrito] = useState(init)
 
@@ -13,7 +13,8 @@ export const CartProvider = ({Children}) =>{
     localStorage.setItem('carrito', JSON.stringify(carrito))
   }, [carrito])
 
-    
+  console.log(carrito)
+
     const addToCart = (item) => {
       setCarrito([...carrito, item])
     }
@@ -33,17 +34,18 @@ export const CartProvider = ({Children}) =>{
     const vaciarCarrito = () =>{
       setCarrito([])
     }
+
     
     return(
         <CartContext.Provider value={{
-            addToCart,
-            calcularCantidad,
-            precioTotal,
-            removerItem,
-            carrito,
-            vaciarCarrito
-          }}>
-            {Children}
+                addToCart,
+                calcularCantidad,
+                precioTotal,
+                removerItem,
+                carrito,
+                vaciarCarrito
+        }}>
+            {children}
         </CartContext.Provider>
     )
 }
