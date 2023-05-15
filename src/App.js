@@ -4,6 +4,7 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer  from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
+import { ItemCount } from './components/ItemCount/ItemCount';
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,16 +12,13 @@ import {
   Route,
 } from 'react-router-dom'
 import { CartProvider } from './components/context/CartContext';
-
-// import { HeaderContainer } from './components/HeaderContainer/HeaderContainer';
-// import { SectionIntro } from './components/SectionIntro/SectionIntro';
 import { CartScreen } from './components/CartScreen/CartScreen';
 
 
 function App() {
 
   return (
-    <CartProvider >
+    <CartProvider>
     <div className="App">
        <Router>
           <NavBar />
@@ -28,12 +26,14 @@ function App() {
             <Route path='/' element= {<ItemListContainer/>}/>
             <Route path='/productos/:categoryId' element={<ItemListContainer/>}/>
             <Route path='/detail/:itemId' element={<ItemDetailContainer/>}/>
+            <Route path='/counter' element={<ItemCount />} />
             <Route path='/cart' element={<CartScreen/>}/>
             <Route path='*' element={<Navigate to='/'/>} />
           </Routes>
         </Router>
     </div>
     </CartProvider>
+    
   );
 }
 

@@ -1,4 +1,4 @@
-﻿import { createContext, useState, useEffect } from "react";
+﻿import { createContext, useState } from "react";
 
 
 export const CartContext = createContext()
@@ -22,11 +22,10 @@ export const CartProvider = ({Children}) =>{
       const newCart = carrito.filter((prod) => prod.id !== itemId)
       setCarrito(newCart)
     }
-  
-    const vaciarCarrito = () => {
+
+    const vaciarCarrito = () =>{
       setCarrito([])
     }
-    
     
     return(
         <CartContext.Provider value={{
