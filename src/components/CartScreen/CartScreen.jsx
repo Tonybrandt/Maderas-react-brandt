@@ -4,7 +4,7 @@ import { BsFillTrashFill } from "react-icons/bs";
 import { CartContext } from "../context/CartContext";
 
 export const CartScreen = () => {
-  const { carrito, precioTotal, removerItem } = useContext(CartContext);
+  const { carrito, precioTotal, removerItem, vaciarCarrito } = useContext(CartContext);
 
   return (
     <div>
@@ -24,7 +24,9 @@ export const CartScreen = () => {
           </div>
         </>
       ))}
+      <hr />
       <strong>Precio total: ${precioTotal()}</strong>
+      <Button className="btn btn-danger" onClick={vaciarCarrito}>Vaciar carrito</Button>
     </div>
   );
 };
