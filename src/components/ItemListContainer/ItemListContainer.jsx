@@ -1,10 +1,11 @@
 ﻿import React, { useEffect, useState } from "react";
-import { pedirProductos } from "../../helpers/pedirProducto";
+// import { pedirProductos } from "../../helpers/pedirProducto";
 import { ItemList } from "../ItemList/ItemList";
 import { Spinner } from "react-bootstrap";
 import { HeaderContainer } from "../HeaderContainer/HeaderContainer";
 import { SectionIntro } from "../SectionIntro/SectionIntro";
 import { useParams } from "react-router-dom";
+import { getFirestore } from '../../firebase/config'
 
 const ItemListContainer = () => {
   
@@ -15,23 +16,44 @@ const ItemListContainer = () => {
   const {categoryId} = useParams()
 
   
+
+  // ***********************
+  // Iniciamos efecto montaje, con loading en "true"
+  // setLoading(true)
+  // pedirProductos()
+  //   .then((res) =>{
+  //     if(categoryId){
+  //       setItems(res.filter(prod => prod.category === categoryId))
+  //     }else {
+  //       setItems(res)
+  //     }
+      
+      
+  //   })
+  //   .catch((error) => console.log(error))
+  //   .finally(() =>{setLoading(false)})
  
 
   useEffect(() =>{
-    // Iniciamos efecto montaje, con loading en "true"
     setLoading(true)
-    pedirProductos()
+
+    const db = getFirestore();
+
+    const productos = db.collection('productos')
+
+    productos.get()
       .then((res) =>{
-        if(categoryId){
-          setItems(res.filter(prod => prod.category === categoryId))
-        }else {
-          setItems(res)
-        }
-        
-        
+        const newItem = res.docs.map((doc) =>{
+          return {id: doc.id, ...doc.data()}
+        })
+        console.table(newItem)
+        setItems(newItem)
       })
-      .catch((error) => console.log(error))
-      .finally(() =>{setLoading(false)})
+      .catch((err) => console.log(err))
+      .finally(() =>{
+        setLoading(false)
+      })
+
   }, [categoryId])
   
   
