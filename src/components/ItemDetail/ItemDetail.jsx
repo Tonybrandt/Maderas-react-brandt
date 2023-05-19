@@ -5,7 +5,7 @@ import './itemdetail.css'
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext'
 
-export const ItemDetail = ({ id, description, price, image, category, stock }) => {
+export const ItemDetail = ({ id, name, description, price, image, category, stock }) => {
   // Pasamos mediante props, cada propiedad de nuestro productos(objetos) y lo colocamos por props en nuestro return
 
 
@@ -24,6 +24,7 @@ export const ItemDetail = ({ id, description, price, image, category, stock }) =
   const sumarAlCarrito = () =>{
     const newItem = {
       id,
+      name,
       description,
       image,
       price,
@@ -31,7 +32,6 @@ export const ItemDetail = ({ id, description, price, image, category, stock }) =
       counter
     }
 
-    console.log(newItem)
     addToCart(newItem)
   }
   
