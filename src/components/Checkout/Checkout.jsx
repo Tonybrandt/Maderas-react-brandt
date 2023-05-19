@@ -1,8 +1,16 @@
-﻿import { useState } from "react"
+﻿import { useState, useContext } from "react"
 import React from 'react'
+import {CartContext} from '../context/CartContext'
 import { Link } from "react-router-dom"
-
+import Swal from "sweetalert2"
+import firebase from 'firebase'
+import 'firebase/firestore'
+import {getFirestore} from '../../firebase/config'
 export const Checkout = () => {
+
+  const {carrito, precioTotal, vaciarCarrito} = useContext(CartContext)
+
+
 
 
   const [email, setEmail] = useState('')
@@ -16,13 +24,50 @@ export const Checkout = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    console.log(email)
-    console.log(nombre)
-    console.log(apellido)
-    console.log(telefono)
+
+    const orden = {
+      buyer: {
+        email,
+        nombre,
+        apellido,
+        telefono
+      },
+      item: carrito,
+      total_price: precioTotal(),
+      data: firebase.firestore.Timestamp.fromDate(new Date())
+    }
+
+    const db = getFirestore()
+  
+    const orders = db.collection('ordenes')
+  
+    orders.add(orden)
+      .then((res) =>{
+        Swal.fire({
+          icon: 'success',
+          title: 'Su compra se realizó con exito!',
+          text: `Guarde su numero de compra: ${res.id}`,
+          willClose: () =>{
+            vaciarCarrito()
+          }
+        })
+      })
+      .finally(() =>{
+        console.log("Orden realizada con éxito!")
+      })
+
+
+      carrito.forEach((item) =>{
+        const docRef = db.collection('productos').doc(item.id)
+
+        docRef.get()
+          .then((doc) =>{
+            docRef.update({
+            stock: doc.data().stock - item.counter
+          })
+        })
+      })
   }
-
-
 
 
   return (
@@ -34,8 +79,8 @@ export const Checkout = () => {
             <div className="form-group">
               <label htmlFor="email"><input type="text" className="form-control" onChange={(e) => setEmail(e.target.value)} value={email} />Email</label>
             </div>
-            <div className="form-group" onChange={(e) => setNombre(e.target.value)} value={nombre}>
-              <label htmlFor="nombre"><input type="text" className="form-control" onChange={(e) => setApellido(e.target.value)} value={apellido}/>Nombre</label>
+            <div className="form-group">
+              <label htmlFor="nombre"><input type="text" className="form-control" onChange={(e) => setNombre(e.target.value)} value={nombre}/>Nombre</label>
             </div>
             <div className="form-group">
               <label htmlFor="apellido"><input type="text" className="form-control" onChange={(e) => setApellido(e.target.value)} value={apellido}/>Apellido</label>
@@ -47,8 +92,6 @@ export const Checkout = () => {
             <Link to='/cart' className= 'btn btn-info'>Volver al Carrito</Link>
 
           </form>
-
-
 
     </div>
   )
