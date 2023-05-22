@@ -1,4 +1,5 @@
 ﻿.menu {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 0 10px;
@@ -9,7 +10,7 @@
 .title-nav {
     color: #000;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 27px;
 }
 
 .title-nav:hover {
@@ -22,10 +23,9 @@
 
 .menu__items{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     padding: 0 10px;
-    margin: 0 10px;
     color: white;
 }
 
@@ -59,3 +59,43 @@
 .link-deplegable:hover {
     color: #000;
 }
+
+@media (max-width: 600px) {
+    .title-nav {
+        color: #000;
+        text-decoration: none;
+        font-size: 16px;
+        line-height: 50px;
+    }
+    
+    .title-nav:hover {
+        color: #000;
+    }
+    
+    .title-white {
+        color: #fff;
+        text-decoration: none;
+        line-height: 50px;
+    }
+
+    .menu {
+        width: 100%;
+        display: flex;
+        height: 50px;
+        background-color: #a22;
+    }
+
+    .menu__items{
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+        color: white;
+    }
+
+    .link {
+        color: white;
+        text-decoration: none;
+        margin: 0 4px;
+    }
+  
+  }

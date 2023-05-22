@@ -48,9 +48,9 @@ export const ItemDetail = ({ id, name, description, price, image, category, stoc
   return (
     <div className='item'>
       <Button className='btn-volver' onClick={goBack}>Volver</Button>
-      <Card className='card' style={{ width: '25rem' }}>
+      <Card className='card'>
         <Card.Img variant="top" src={image} />
-        <Card.Body>
+        <Card.Body className='card-body'>
           {/* <Card.Title>{id}</Card.Title> */}
           <Card.Title>{description}</Card.Title>
           <Card.Title>Precio: ${price}</Card.Title>

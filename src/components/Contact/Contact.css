@@ -1,0 +1,82 @@
+﻿.contact-title {
+    /* background: linear-gradient(to top, #fff 0%, rgba(170, 34, 34, 0.5) 100%); */
+    background: #f2f2f2;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.contact-title h2 {
+    font-size: 30px;
+    /* border-top: solid 2px var(--color-base); */
+    margin: 10px;
+}
+
+.contact-title p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #fff;
+    margin: auto;
+    padding: 20px;
+    max-width: 1000px;
+
+}
+
+.form {
+    min-width: 300px;
+    flex: 1;
+    text-align: center;
+    padding: 30px;
+    order: 1;
+}
+
+.form__input {
+    width: 100%;
+    padding: 7px;
+    margin: 6px 0;
+    background: transparent;
+    border: none;
+    border-left: solid 3px #a22;
+    border-bottom: solid 1px #a22;
+}
+
+.form__input:focus {
+    background: linear-gradient(to bottom, transparent, rgb(211, 211, 211));
+    outline: none;
+}
+
+
+.form textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.form-img {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    min-width: 300px;
+    max-width: 400px;
+    order: 2;
+}
+
+.form-img img {
+    width: 60%;
+    margin: auto;
+}
+
+.form input[type="submit"] {
+    background-color: #a22;
+    padding: 12px;
+    color: #fff;
+}
+
+.form input[type="submit"]:hover {
+    background-color: rgb(117, 26, 26);
+}

@@ -3,7 +3,7 @@ import './Footer.css'
 
 export const Footer = () => {
   return (
-    <>
+    <div className='body-footer' style={{position: 'relative', bottom: '0'}}>
     <footer className="footer-links">
         <div lassName="footer-container">
             <ul className="ul">
@@ -42,6 +42,6 @@ export const Footer = () => {
         </div>
         
     </footer>
-    </>
+    </div>
   )
 }

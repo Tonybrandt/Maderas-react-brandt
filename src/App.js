@@ -15,6 +15,7 @@ import { CartProvider } from './components/context/CartContext';
 import { CartScreen } from './components/CartScreen/CartScreen';
 import { Checkout } from './components/Checkout/Checkout';
 import { Footer } from './components/Footer/Footer';
+import { Contact } from './components/Contact/Contact';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route path='/counter' element={<ItemCount/>} />
             <Route path='/Checkout' element={<Checkout/>} />
             <Route path='/cart' element={<CartScreen/>}/>
+            <Route path='/Contact' element={<Contact/>}/>
             <Route path='*' element={<Navigate to='/'/>} />
           </Routes>
           <Footer/>

@@ -31,3 +31,18 @@
 .header--button:hover {
     color: white;
 }
+
+@media (max-width: 600px) {
+    .title {
+      font-size: 45px;
+    }
+
+    .title__copy {
+    padding: 4px;
+    border-radius: 8px;
+    margin: 25px 0;
+    margin-bottom: 55px;
+    font-size: 15px;
+    }
+  
+  }

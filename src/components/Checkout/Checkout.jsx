@@ -6,6 +6,8 @@ import Swal from "sweetalert2"
 import firebase from 'firebase'
 import 'firebase/firestore'
 import {getFirestore} from '../../firebase/config'
+import './Checkout.css'
+
 export const Checkout = () => {
 
   const {carrito, precioTotal, vaciarCarrito} = useContext(CartContext)
@@ -71,22 +73,22 @@ export const Checkout = () => {
 
 
   return (
-    <div>
-        <h3>Terminar compra</h3>
+    <div className="checkout">
+        <h3 className="check-title">Terminar compra</h3>
         <hr />
 
-          <form onSubmit={handleSubmit} className="container mt-3">
+          <form onSubmit={handleSubmit} className="container">
             <div className="form-group">
-              <label htmlFor="email"><input type="text" className="form-control" onChange={(e) => setEmail(e.target.value)} value={email} />Email</label>
+              <input type="text" className="form-control" placeholder="E-mail" onChange={(e) => setEmail(e.target.value)} value={email} />
             </div>
             <div className="form-group">
-              <label htmlFor="nombre"><input type="text" className="form-control" onChange={(e) => setNombre(e.target.value)} value={nombre}/>Nombre</label>
+            <input type="text" className="form-control" placeholder="Nombre" onChange={(e) => setNombre(e.target.value)} value={nombre}/>
             </div>
             <div className="form-group">
-              <label htmlFor="apellido"><input type="text" className="form-control" onChange={(e) => setApellido(e.target.value)} value={apellido}/>Apellido</label>
+              <input type="text" className="form-control" placeholder="Apellido" onChange={(e) => setApellido(e.target.value)} value={apellido}/>
             </div>
             <div className="form-group">
-              <label htmlFor="telefono"><input type="text" className="form-control" onChange={(e) => setTelefono(e.target.value)} value={telefono}/>Teléfono</label>
+              <input type="text" className="form-control" placeholder="Teléfono" onChange={(e) => setTelefono(e.target.value)} value={telefono}/>
             </div>
             <button type="submit" className="btn btn-success">Finalizar</button>
             <Link to='/cart' className= 'btn btn-info'>Volver al Carrito</Link>

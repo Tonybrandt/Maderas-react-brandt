@@ -11,7 +11,7 @@ export const CartScreen = () => {
     useContext(CartContext)
 
   return (
-    <div>
+    <div className="cart-container" style={{marginBottom: '250px'}}>
       {carrito.length === 0 ? 
         <>
           <h3>Carrito vacío!</h3>

@@ -19,7 +19,17 @@
     border: 2px black solid;
 }
 
+
 .card {
-    margin:15px 18px;
+    width: 25rem;
+    margin:25px auto;
     box-shadow: 5px 5px 16px 1px #000;
+}
+
+@media (max-width: 600px) {
+    .card{
+        width: 20rem;
+        margin: 20 auto;
+    }
+    
 }

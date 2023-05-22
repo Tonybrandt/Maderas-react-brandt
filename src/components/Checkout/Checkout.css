@@ -1,0 +1,16 @@
+﻿.check-title {
+    margin: 10px auto;
+    margin-bottom: 10px;
+}
+
+.checkout {
+    width: 100%;
+    padding: 20px 10px;
+    margin: 15px auto;
+}
+
+.form-control {
+    width: 90%;
+    margin: 35px 0;
+    border: 1px solid #a22;
+}
