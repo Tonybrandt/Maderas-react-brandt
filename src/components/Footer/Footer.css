@@ -1,0 +1,40 @@
+﻿.footer-links {
+    background: #f2f2f2;
+    width: 100%;
+    display: block;
+    font-size: 15px;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.ul {
+    margin: 0 auto;
+    list-style: none;
+}
+
+.footer-title {
+    line-height: 2.4;
+    color: var(--color-base);
+}
+
+.footer-link {
+    line-height: 2.4;
+    color: #000;
+    text-decoration: none;
+}
+
+.footer {
+    background: #a22;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:right;
+    color: rgb(179, 177, 177);
+    font-size: 18px;
+    margin: 0;
+}
