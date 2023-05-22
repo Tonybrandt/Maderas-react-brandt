@@ -1,11 +1,12 @@
 ﻿import React, { useEffect, useState } from "react";
-// import { pedirProductos } from "../../helpers/pedirProducto";
 import { ItemList } from "../ItemList/ItemList";
 import { Spinner } from "react-bootstrap";
 import { HeaderContainer } from "../HeaderContainer/HeaderContainer";
 import { SectionIntro } from "../SectionIntro/SectionIntro";
 import { useParams } from "react-router-dom";
 import { getFirestore } from '../../firebase/config'
+import { FindUs } from "../FindUs/FindUs";
+import { SocialNetworks } from "../SocialNetworks/SocialNetworks";
 
 const ItemListContainer = () => {
   
@@ -15,84 +16,29 @@ const ItemListContainer = () => {
 
   const {categoryId} = useParams()
 
-  
 
-  // ***********************
-  // Iniciamos efecto montaje, con loading en "true"
-  // setLoading(true)
-  // pedirProductos()
-  //   .then((res) =>{
-  //     if(categoryId){
-  //       setItems(res.filter(prod => prod.category === categoryId))
-  //     }else {
-  //       setItems(res)
-  //     }
-      
-      
-  //   })
-  //   .catch((error) => console.log(error))
-  //   .finally(() =>{setLoading(false)})
-
-
-    // Resumido if y else con operadores ternarios
-    // useEffect(() =>{
-    //   setLoading(true)
-    //   const db = getFirestore()
+    useEffect(() =>{
+      setLoading(true)
+      const db = getFirestore()
   
-    //   const productos = categoryId
-    //     ?db.collection('productos').where('category', '==', categoryId)
-    //     : db.collection('productos')
-    //     productos.get()
-    //     .then((res) => {
-    //             const newItem = res.docs.map((doc) => {
-    //               return { id: doc.id, ...doc.data() };
-    //             });
-    //             console.table(newItem);
-    //             setItems(newItem);
-    //           })
-    //           .catch((err) => console.log(err))
-    //           .finally(() => {
-    //             setLoading(false);
-    //           });
+      const productos = categoryId
+        ?db.collection('productos').where('category', '==', categoryId)
+        : db.collection('productos')
+        productos.get()
+        .then((res) => {
+                const newItem = res.docs.map((doc) => {
+                  return { id: doc.id, ...doc.data() };
+                });
+                console.table(newItem);
+                setItems(newItem);
+              })
+              .catch((err) => console.log(err))
+              .finally(() => {
+                setLoading(false);
+              });
   
-    // }, [categoryId, setLoading])
+    }, [categoryId, setLoading])
  
-
-  useEffect(() =>{
-    setLoading(true)
-
-    const db = getFirestore();
-
-    const productos = db.collection('productos')
-
-    if(categoryId){
-      const filtrado = productos.where('category', '==', categoryId)
-      filtrado.get()
-      .then((res) =>{
-        const newItem = res.docs.map((doc) =>{
-          return{id: doc.id, ...doc.data()}
-        })
-        setItems(newItem)
-      })
-      .catch((err) => console.log(err))
-      .finally(() =>{
-        setLoading(false)
-      })
-    }else{
-      productos.get()
-        .then((res) =>{
-          const newItem = res.docs.map((doc) =>{
-            return {id: doc.id, ...doc.data()}
-          })
-          console.table(newItem)
-          setItems(newItem)
-        })
-        .catch((err) => console.log(err))
-        .finally(() =>{
-          setLoading(false)
-        })
-    }
-  }, [categoryId])
   
   
   return (
@@ -104,6 +50,8 @@ const ItemListContainer = () => {
           <HeaderContainer />
           <SectionIntro />
           <ItemList productos={items}/>
+          <FindUs/>
+          <SocialNetworks/>
           </>
         }
     </div>

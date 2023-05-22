@@ -1,0 +1,19 @@
+﻿.encontranos {
+    background-color: #fff;
+    padding: 10px 0;
+    margin: 20px auto;
+}
+
+.encontranos-title {
+    margin-top: 20px;
+    font-size: 40px;
+    margin: 15px auto;
+}
+
+.encontranos__map {
+    margin: 10px 0;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,49 @@
+﻿.social {
+    margin: 50px;
+}
+.title-social {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.links a {
+    padding: 0 35px;
+}
+
+.link {
+    margin-bottom: 15px;
+    font-size: 2rem;
+    color: black;
+}
+
+.link:hover {
+    margin-bottom: 15px;
+    font-size: 2rem;
+    color: black;
+}
+
+.face {
+    color: #1877F2;
+}
+
+.what {
+    color: #25D366;
+}
+
+.insta {
+    background-color: radial-gradient(to top, at 33%, 100%,
+        #fed373 4%,
+        #f15245 30%,
+        #d92e7f 62%,
+        #9b36b7 85%,
+        #515ecf);
+    color: #E4405F;
+}

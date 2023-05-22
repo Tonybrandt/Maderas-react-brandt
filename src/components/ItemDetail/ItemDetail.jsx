@@ -4,6 +4,8 @@ import { ItemCount } from '../ItemCount/ItemCount'
 import './itemdetail.css'
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext'
+import { toast, ToastContainer } from 'react-toastify';
+  import "react-toastify/dist/ReactToastify.css";
 
 export const ItemDetail = ({ id, name, description, price, image, category, stock }) => {
   // Pasamos mediante props, cada propiedad de nuestro productos(objetos) y lo colocamos por props en nuestro return
@@ -31,9 +33,17 @@ export const ItemDetail = ({ id, name, description, price, image, category, stoc
       category,
       counter
     }
-
     addToCart(newItem)
+
+    const notify = () => {
+
+      toast.success("Se agregó al carrito !", {
+          position: toast.POSITION.TOP_RIGHT
+        });
+      
+    }
   }
+
   
   return (
     <div className='item'>
@@ -48,6 +58,8 @@ export const ItemDetail = ({ id, name, description, price, image, category, stoc
           <Card.Title>Categoria: {category}</Card.Title>
           <ItemCount max={stock} modify={setCounter} cantidad={counter} />
           <Button className='btn__itemdetail' onClick={sumarAlCarrito} variant="primary">Agregar al carrito</Button>
+          <ToastContainer />
+         
         </Card.Body>
       </Card>
     </div>

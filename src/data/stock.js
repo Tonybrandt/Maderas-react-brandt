@@ -48,3 +48,20 @@
     stock: 20
 },
 ]
+
+
+// function Example() {
+//     const notify = () => {
+
+// toast.success("Success Notification !", {
+//     position: toast.POSITION.TOP_CENTER
+//   });
+// };
+
+// return (
+//    <>
+//      <button onClick={notify}>Notify</button>;
+//      <ToastContainer />
+//    </>
+//  );
+// }
