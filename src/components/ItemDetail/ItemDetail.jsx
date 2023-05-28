@@ -5,7 +5,7 @@ import './itemdetail.css'
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext'
 import { toast, ToastContainer } from 'react-toastify';
-  import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.css";
 
 export const ItemDetail = ({ id, name, description, price, image, category, stock }) => {
   // Pasamos mediante props, cada propiedad de nuestro productos(objetos) y lo colocamos por props en nuestro return
@@ -34,6 +34,7 @@ export const ItemDetail = ({ id, name, description, price, image, category, stoc
       counter
     }
     addToCart(newItem)
+  }
 
     const notify = () => {
 
@@ -42,7 +43,6 @@ export const ItemDetail = ({ id, name, description, price, image, category, stoc
         });
       
     }
-  }
 
   
   return (
@@ -57,9 +57,12 @@ export const ItemDetail = ({ id, name, description, price, image, category, stoc
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea error totam quibusdam doloribus, alias aperiam exercitationem laboriosam illum similique eos, delectus vitae odit maxime, repellendus iusto quisquam placeat blanditiis. Cupiditate! </p>
           <Card.Title>Categoria: {category}</Card.Title>
           <ItemCount max={stock} modify={setCounter} cantidad={counter} />
-          <Button className='btn__itemdetail' onClick={sumarAlCarrito} variant="primary">Agregar al carrito</Button>
+          <Button className='btn__itemdetail' onClick={() => {
+            sumarAlCarrito()
+            notify()
+          }} variant="primary">Agregar al carrito</Button>
           <ToastContainer />
-         
+         {/* sumarAlCarrito */}
         </Card.Body>
       </Card>
     </div>
