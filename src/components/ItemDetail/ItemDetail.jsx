@@ -33,12 +33,27 @@ export const ItemDetail = ({ id, name, description, price, image, category, stoc
       category,
       counter
     }
+
+    if(newItem == undefined){
     addToCart(newItem)
+    notify()
+  }else{
+  //  console.log("Ya agregaste este producto")
+   notify2()
+  }
   }
 
     const notify = () => {
 
-      toast.success("Se agregó al carrito !", {
+      toast.success("Se agregó al carrito", {
+          position: toast.POSITION.TOP_RIGHT
+        });
+      
+    }
+
+    const notify2 = () => {
+
+      toast.info("Ya agregaste este producto", {
           position: toast.POSITION.TOP_RIGHT
         });
       
@@ -59,7 +74,7 @@ export const ItemDetail = ({ id, name, description, price, image, category, stoc
           <ItemCount max={stock} modify={setCounter} cantidad={counter} />
           <Button className='btn__itemdetail' onClick={() => {
             sumarAlCarrito()
-            notify()
+            // notify()
           }} variant="primary">Agregar al carrito</Button>
           <ToastContainer />
          {/* sumarAlCarrito */}
