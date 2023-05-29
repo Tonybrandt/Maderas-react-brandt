@@ -79,16 +79,16 @@ export const Checkout = () => {
 
           <form onSubmit={handleSubmit} className="container">
             <div className="form-group">
-              <input type="text" className="form-control" placeholder="E-mail" onChange={(e) => setEmail(e.target.value)} value={email} />
+              <input type="text" className="form-control" placeholder="E-mail" onChange={(e) => setEmail(e.target.value)} value={email} required />
             </div>
             <div className="form-group">
-            <input type="text" className="form-control" placeholder="Nombre" onChange={(e) => setNombre(e.target.value)} value={nombre}/>
+            <input type="text" className="form-control" placeholder="Nombre" onChange={(e) => setNombre(e.target.value)} value={nombre} required/>
             </div>
             <div className="form-group">
-              <input type="text" className="form-control" placeholder="Apellido" onChange={(e) => setApellido(e.target.value)} value={apellido}/>
+              <input type="text" className="form-control" placeholder="Apellido" onChange={(e) => setApellido(e.target.value)} value={apellido} required/>
             </div>
             <div className="form-group">
-              <input type="text" className="form-control" placeholder="Teléfono" onChange={(e) => setTelefono(e.target.value)} value={telefono}/>
+              <input type="text" className="form-control" placeholder="Teléfono" onChange={(e) => setTelefono(e.target.value)} value={telefono} required/>
             </div>
             <button type="submit" className="btn btn-success">Finalizar</button>
             <Link to='/cart' className= 'btn btn-info'>Volver al Carrito</Link>
