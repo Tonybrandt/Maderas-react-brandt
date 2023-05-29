@@ -13,15 +13,7 @@ export const ItemDetailContainer = () => {
 
     const {itemId} = useParams()
 
-    // setLoading(true)
-    // pedirProductos()
-    //     .then(res =>{
-    //         setItem( res.find( prod => prod.id === Number(itemId)))
-    //     })
-    //     .catch((error) => console.log(error))
-    //     .finally(() => {
-    //         setLoading(false)
-    //     })
+
     useEffect(() =>{
         setLoading(true)
         const db = getFirestore()

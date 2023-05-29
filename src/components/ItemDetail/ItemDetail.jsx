@@ -20,7 +20,7 @@ export const ItemDetail = ({ id, name, description, price, image, category, stoc
   /********************/
 
   const {addToCart} = useContext(CartContext)
-  
+
   const [counter, setCounter] = useState(1)
 
   const sumarAlCarrito = () =>{
@@ -34,14 +34,15 @@ export const ItemDetail = ({ id, name, description, price, image, category, stoc
       counter
     }
 
-    if(newItem == undefined){
-    addToCart(newItem)
-    notify()
-  }else{
-  //  console.log("Ya agregaste este producto")
-   notify2()
+    if(newItem){
+      addToCart(newItem)
+      notify()
+    }else {
+      console.log("Ya agregaste este producto")
+      notify2()
+    }
   }
-  }
+  
 
     const notify = () => {
 
@@ -72,10 +73,7 @@ export const ItemDetail = ({ id, name, description, price, image, category, stoc
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea error totam quibusdam doloribus, alias aperiam exercitationem laboriosam illum similique eos, delectus vitae odit maxime, repellendus iusto quisquam placeat blanditiis. Cupiditate! </p>
           <Card.Title>Categoria: {category}</Card.Title>
           <ItemCount max={stock} modify={setCounter} cantidad={counter} />
-          <Button className='btn__itemdetail' onClick={() => {
-            sumarAlCarrito()
-            // notify()
-          }} variant="primary">Agregar al carrito</Button>
+          <Button className='btn__itemdetail' onClick={sumarAlCarrito} variant="primary">Agregar al carrito</Button>
           <ToastContainer />
          {/* sumarAlCarrito */}
         </Card.Body>

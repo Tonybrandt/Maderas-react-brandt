@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <div className='body-footer' style={{position: 'relative', bottom: '0'}}>
     <footer className="footer-links">
-        <div lassName="footer-container">
+        <div className="footer-container">
             <ul className="ul">
                 <li>
                     <h3 className="footer-title">
@@ -37,7 +37,7 @@ export const Footer = () => {
             </ul>
         </div>
         
-        <div class="footer">
+        <div className="footer">
             <h4>©2021 JB Maderas</h4>
         </div>
         

@@ -8,6 +8,7 @@ import { getFirestore } from '../../firebase/config'
 import { FindUs } from "../FindUs/FindUs";
 import { SocialNetworks } from "../SocialNetworks/SocialNetworks";
 
+
 const ItemListContainer = () => {
   
   const [items, setItems] = useState([])
@@ -29,7 +30,6 @@ const ItemListContainer = () => {
                 const newItem = res.docs.map((doc) => {
                   return { id: doc.id, ...doc.data() };
                 });
-                console.table(newItem);
                 setItems(newItem);
               })
               .catch((err) => console.log(err))
