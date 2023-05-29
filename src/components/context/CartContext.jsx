@@ -42,6 +42,7 @@ export const CartProvider = ({children}) =>{
                 precioTotal,
                 removerItem,
                 carrito,
+                setCarrito,
                 vaciarCarrito
         }}>
             {children}

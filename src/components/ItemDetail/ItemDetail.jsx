@@ -7,7 +7,7 @@ import { CartContext } from '../context/CartContext'
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
-export const ItemDetail = ({ id, name, description, price, image, category, stock }) => {
+export const ItemDetail = ({ item, id, name, description, price, image, category, stock }) => {
   // Pasamos mediante props, cada propiedad de nuestro productos(objetos) y lo colocamos por props en nuestro return
 
 
@@ -17,10 +17,10 @@ export const ItemDetail = ({ id, name, description, price, image, category, stoc
     navigate(-1)
   }
 
-  /********************/
 
   const {addToCart} = useContext(CartContext)
-
+  
+  
   const [counter, setCounter] = useState(1)
 
   const sumarAlCarrito = () =>{
@@ -34,15 +34,11 @@ export const ItemDetail = ({ id, name, description, price, image, category, stoc
       counter
     }
 
-    if(newItem){
-      addToCart(newItem)
-      notify()
-    }else {
-      console.log("Ya agregaste este producto")
-      notify2()
-    }
+    addToCart(newItem) 
+    notify()
+
   }
-  
+
 
     const notify = () => {
 

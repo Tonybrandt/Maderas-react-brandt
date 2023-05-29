@@ -2,7 +2,7 @@
 import './ItemCount.css';
 
 export const ItemCount = ({max, cantidad, modify}) => {
-
+ 
     
     const sumar = () => {
         if (cantidad < max) {
