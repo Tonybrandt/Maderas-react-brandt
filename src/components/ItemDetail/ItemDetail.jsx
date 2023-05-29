@@ -61,7 +61,7 @@ export const ItemDetail = ({ item, id, name, description, price, image, category
     <div className='item'>
       <Button className='btn-volver' onClick={goBack}>Volver</Button>
       <Card className='card'>
-        <Card.Img variant="top" src={image} />
+        <Card.Img variant="top" src={image} alt={description}/>
         <Card.Body className='card-body'>
           {/* <Card.Title>{id}</Card.Title> */}
           <Card.Title>{description}</Card.Title>

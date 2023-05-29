@@ -10,7 +10,7 @@ export const CartScreen = () => {
     useContext(CartContext)
 
   return (
-    <div className="cart-container" style={{marginBottom: 'auto'}}>
+    <div className="cart-container" style={{marginBottom: '400px'}}>
       {carrito.length === 0 ? 
         <>
           <h3>Carrito vacío!</h3>
@@ -28,7 +28,7 @@ export const CartScreen = () => {
               <div className="container my-5">
                 
                 <div className="listado">
-                  <img src={prod.image} alt="" />
+                  <img src={prod.image} alt={prod.description} style={{objectFit: "cover"}}/>
                   <p>Producto: {prod.description} </p>
                   <p>Precio uni.: ${prod.price}</p>
                   <p>cantidad: {prod.counter}</p>
