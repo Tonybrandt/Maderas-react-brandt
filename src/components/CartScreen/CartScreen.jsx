@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BsFillTrashFill } from "react-icons/bs";
 import { CartContext } from "../context/CartContext";
+import { Tema } from "../Tema/Tema";
 
 export const CartScreen = () => {
 

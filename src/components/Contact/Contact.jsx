@@ -1,5 +1,5 @@
 ﻿import React from 'react'
-import './Contact.css'
+import './Contact.scss'
 import mail from '../../assets/mail1.png'
 
 export const Contact = () => {
@@ -20,7 +20,7 @@ export const Contact = () => {
             <input type="email" name="" className="form__input" placeholder="E-mail"/>
         </div>
         <div className="form__section">
-            <textarea class="form__input" name="" id="" cols="30" rows="10" placeholder="Escriba su mensaje"></textarea>
+            <textarea className="form__input" name="" id="" cols="30" rows="10" placeholder="Escriba su mensaje"></textarea>
         </div>
         <div>
             <input type="submit" className="form__input"/>

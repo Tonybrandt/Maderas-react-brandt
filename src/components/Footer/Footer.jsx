@@ -3,7 +3,7 @@ import './Footer.css'
 
 export const Footer = () => {
   return (
-    <div className='body-footer' style={{position: 'relative', bottom: '0'}}>
+    <div className='body-footer' >
     <footer className="footer-links">
         <div className="footer-container">
             <ul className="ul">

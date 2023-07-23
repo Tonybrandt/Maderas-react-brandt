@@ -9,7 +9,7 @@ import { FindUs } from "../FindUs/FindUs";
 import { SocialNetworks } from "../SocialNetworks/SocialNetworks";
 
 
-const ItemListContainer = () => {
+export const ItemListContainer = () => {
   
   const [items, setItems] = useState([])
   
@@ -58,4 +58,4 @@ const ItemListContainer = () => {
   );
 };
 
-export default ItemListContainer;
+// export default ItemListContainer;
