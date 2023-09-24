@@ -1,17 +1,23 @@
 ﻿.menu {
     width: 100%;
+    padding: 0 10px;
+    height: 75px;
+    background-color: #a22;
+}
+
+.nav__container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
-    height: 50px;
-    background-color: #a22;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .title-nav {
     color: #000;
     text-decoration: none;
     font-size: 27px;
-    line-height: 50px;
+    line-height: 75px;
 }
 
 .title-nav:hover {
@@ -42,7 +48,8 @@
 .link {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 15px;
+    font-size: 1.2em;
 }
 
 .link:hover {
@@ -55,6 +62,11 @@
     color: #000;
     text-decoration: none;
     margin-left: 10px;
+    font-size: 1.2em;
+}
+
+#nav-dropdown {
+    font-size: 1.2em;
 }
 
 .link-deplegable:hover {

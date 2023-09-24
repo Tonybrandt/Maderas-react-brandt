@@ -1,5 +1,5 @@
 ﻿.header--img {
-    height: calc(100vh - 50px);
+    height: calc(100vh - 75px);
     width: 100%;
     background-image: url(assets/osb.jpg);
     background-size: cover;
