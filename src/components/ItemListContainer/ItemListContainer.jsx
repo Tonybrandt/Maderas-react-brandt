@@ -4,7 +4,7 @@ import { Spinner } from "react-bootstrap";
 import { HeaderContainer } from "../HeaderContainer/HeaderContainer";
 import { SectionIntro } from "../SectionIntro/SectionIntro";
 import { useParams } from "react-router-dom";
-import { getFirestore } from '../../firebase/config'
+import { getFirestore } from '../../firebase/fire'
 import { FindUs } from "../FindUs/FindUs";
 import { SocialNetworks } from "../SocialNetworks/SocialNetworks";
 

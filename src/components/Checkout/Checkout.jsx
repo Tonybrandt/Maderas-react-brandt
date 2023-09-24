@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import Swal from "sweetalert2"
 import firebase from 'firebase'
 import 'firebase/firestore'
-import {getFirestore} from '../../firebase/config'
+import {getFirestore} from '../../firebase/fire'
 import './Checkout.css'
 
 export const Checkout = () => {

@@ -1,6 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react'
 // import { pedirProductos } from "../../helpers/pedirProducto";
-import { getFirestore } from '../../firebase/config';
+import { getFirestore } from '../../firebase/fire';
 import Spinner from 'react-bootstrap/Spinner';
 import {ItemDetail} from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
@@ -20,7 +20,7 @@ export const ItemDetailContainer = () => {
 
         const productos = db.collection('productos')
 
-        // .doc nos referimos a nuestros documentos denro de firestore
+        // .doc nos referimos a nuestros documentos dentro de firestore
         const item = productos.doc(itemId)
 
         item.get()
