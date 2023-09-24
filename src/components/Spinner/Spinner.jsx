@@ -1,9 +1,9 @@
-﻿import Spinner from 'react-bootstrap/Spinner';
-import './spinner.css'
+﻿import Spinner from "react-bootstrap/Spinner";
+import "./spinner.css";
 function VariantsExample() {
   return (
-    <div className='loader-background'>
-      <Spinner className='spinner' animation="grow" variant="danger" />
+    <div className="loader-background">
+      <Spinner className="spinner" animation="grow" variant="danger" />
     </div>
   );
 }

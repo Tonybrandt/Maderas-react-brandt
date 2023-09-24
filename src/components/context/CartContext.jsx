@@ -1,51 +1,49 @@
 ﻿import { createContext, useEffect, useState } from "react";
 
+export const CartContext = createContext();
 
-export const CartContext = createContext()
+const init = JSON.parse(localStorage.getItem("carrito")) || [];
 
-const init = JSON.parse(localStorage.getItem('carrito')) || []
+export const CartProvider = ({ children }) => {
+  const [carrito, setCarrito] = useState(init);
 
-export const CartProvider = ({children}) =>{
+  useEffect(() => {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }, [carrito]);
 
-  const [carrito, setCarrito] = useState(init)
+  const addToCart = (item) => {
+    setCarrito([...carrito, item]);
+  };
+  const calcularCantidad = () => {
+    return carrito.reduce((acc, prod) => acc + prod.counter, 0);
+  };
 
-  useEffect(() =>{
-    localStorage.setItem('carrito', JSON.stringify(carrito))
-  }, [carrito])
+  const precioTotal = () => {
+    return carrito.reduce((acc, prod) => acc + prod.price * prod.counter, 0);
+  };
 
+  const removerItem = (itemId) => {
+    const newCart = carrito.filter((prod) => prod.id !== itemId);
+    setCarrito(newCart);
+  };
 
-    const addToCart = (item) => {
-      setCarrito([...carrito, item])
-    }
-    const calcularCantidad = () => {
-      return carrito.reduce((acc, prod) => acc + prod.counter, 0)
-    }
-  
-    const precioTotal = () => {
-      return carrito.reduce((acc, prod) => acc + prod.price * prod.counter, 0)
-    }
-  
-    const removerItem = (itemId) => {
-      const newCart = carrito.filter((prod) => prod.id !== itemId)
-      setCarrito(newCart)
-    }
+  const vaciarCarrito = () => {
+    setCarrito([]);
+  };
 
-    const vaciarCarrito = () =>{
-      setCarrito([])
-    }
-
-    
-    return(
-        <CartContext.Provider value={{
-                addToCart,
-                calcularCantidad,
-                precioTotal,
-                removerItem,
-                carrito,
-                setCarrito,
-                vaciarCarrito
-        }}>
-            {children}
-        </CartContext.Provider>
-    )
-}
+  return (
+    <CartContext.Provider
+      value={{
+        addToCart,
+        calcularCantidad,
+        precioTotal,
+        removerItem,
+        carrito,
+        setCarrito,
+        vaciarCarrito,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+};
